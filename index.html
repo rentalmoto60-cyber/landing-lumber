@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,7 +41,7 @@
   }
 }
 </script>
- 
+
 <style>
 /* ===== VARIABLES ===== */
 :root {
@@ -62,7 +62,7 @@
   --radius-lg: 8px;
   --transition: 0.4s cubic-bezier(0.2,0.8,0.2,1);
 }
- 
+
 /* ===== RESET ===== */
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -78,7 +78,7 @@ img, video { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; transition: color var(--transition); }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 input, select, textarea { font-family: inherit; font-size: inherit; }
- 
+
 h1, h2, h3, h4 {
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
@@ -91,7 +91,7 @@ h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
 h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 700; }
 h4 { font-size: 1.05rem; font-weight: 700; }
 p { color: var(--muted); }
- 
+
 .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 .section { padding: 100px 0; position: relative; }
 .section-tag {
@@ -114,7 +114,7 @@ p { color: var(--muted); }
 }
 .section-title { margin-bottom: 56px; max-width: 720px; }
 .section-title p { margin-top: 16px; font-size: 1.05rem; }
- 
+
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;
@@ -138,7 +138,7 @@ p { color: var(--muted); }
 .btn-ghost { background: rgba(250,248,243,0.1); color: var(--light); border: 1px solid rgba(250,248,243,0.3); backdrop-filter: blur(10px); }
 .btn-ghost:hover { background: rgba(250,248,243,0.2); border-color: var(--light); }
 .btn-sm { padding: 10px 20px; font-size: 0.85rem; }
- 
+
 /* ===== HEADER ===== */
 .header {
   position: sticky;
@@ -180,7 +180,7 @@ p { color: var(--muted); }
   text-transform: uppercase;
   margin-top: 2px;
 }
- 
+
 .nav {
   display: flex;
   gap: 36px;
@@ -201,7 +201,7 @@ p { color: var(--muted); }
 }
 .nav a:hover { color: var(--accent); }
 .nav a:hover::after { width: 100%; }
- 
+
 .header-cta {
   display: flex;
   align-items: center;
@@ -214,7 +214,7 @@ p { color: var(--muted); }
   white-space: nowrap;
 }
 .header-phone:hover { color: var(--accent); }
- 
+
 .burger {
   display: none;
   width: 44px; height: 44px;
@@ -230,12 +230,12 @@ p { color: var(--muted); }
 .burger span:nth-child(1) { top: 16px; }
 .burger span:nth-child(2) { top: 21px; }
 .burger span:nth-child(3) { top: 26px; }
- 
+
 #menu-toggle { display: none; }
 #menu-toggle:checked ~ .burger span:nth-child(1) { top: 21px; transform: rotate(45deg); }
 #menu-toggle:checked ~ .burger span:nth-child(2) { opacity: 0; }
 #menu-toggle:checked ~ .burger span:nth-child(3) { top: 21px; transform: rotate(-45deg); }
- 
+
 /* ===== HERO ===== */
 .hero {
   position: relative;
@@ -315,7 +315,7 @@ p { color: var(--muted); }
 .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 .hero-buttons .btn-primary { background: var(--light); color: var(--graphite); }
 .hero-buttons .btn-primary:hover { background: var(--accent); color: var(--light); }
- 
+
 .hero-meta {
   position: absolute;
   bottom: 40px;
@@ -331,7 +331,7 @@ p { color: var(--muted); }
 }
 .hero-meta-item { opacity: 0.7; }
 .hero-meta-item strong { display: block; font-family: 'Manrope', sans-serif; font-size: 1.6rem; font-weight: 700; opacity: 1; margin-bottom: 4px; }
- 
+
 /* ===== FEATURES ===== */
 .features {
   background: var(--bg);
@@ -366,7 +366,7 @@ p { color: var(--muted); }
 }
 .feature-card h4 { margin-bottom: 10px; }
 .feature-card p { font-size: 0.95rem; line-height: 1.55; }
- 
+
 /* ===== ABOUT ===== */
 .about {
   background: var(--light);
@@ -412,7 +412,7 @@ p { color: var(--muted); }
   color: var(--muted);
   line-height: 1.4;
 }
- 
+
 /* ===== CATALOG ===== */
 .catalog { background: var(--bg); }
 .catalog-category { margin-bottom: 16px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg-card); overflow: hidden; transition: box-shadow var(--transition); }
@@ -451,7 +451,7 @@ p { color: var(--muted); }
   flex-shrink: 0;
 }
 .catalog-category[open] .category-arrow { transform: rotate(180deg); }
- 
+
 .category-body {
   padding: 0 28px 28px;
   overflow: hidden;
@@ -574,7 +574,7 @@ p { color: var(--muted); }
 }
 .product-btn:hover { background: var(--accent); color: var(--light); border-color: var(--accent); }
 .product-card.special .price-main { font-size: 1.05rem; color: var(--accent); }
- 
+
 /* ===== CALCULATOR ===== */
 .calculator {
   background: var(--light);
@@ -608,7 +608,7 @@ p { color: var(--muted); }
   transition: border-color var(--transition);
 }
 .calc-add select:focus { outline: none; border-color: var(--accent); }
- 
+
 .calc-items { min-height: 80px; }
 .calc-empty {
   text-align: center;
@@ -618,7 +618,7 @@ p { color: var(--muted); }
   border: 1px dashed var(--border);
   border-radius: var(--radius);
 }
- 
+
 .calc-row {
   display: grid;
   grid-template-columns: 2.2fr 1fr 1fr 1.2fr 40px;
@@ -638,7 +638,7 @@ p { color: var(--muted); }
 @keyframes slideOut {
   to { opacity: 0; transform: translateX(20px); height: 0; padding: 0; margin: 0; }
 }
- 
+
 .calc-name strong { display: block; font-weight: 600; color: var(--graphite); font-size: 0.92rem; margin-bottom: 2px; }
 .calc-name small { color: var(--muted); font-size: 0.8rem; }
 .unit-toggle {
@@ -685,7 +685,7 @@ p { color: var(--muted); }
   transition: all var(--transition);
 }
 .calc-remove:hover { background: rgba(220,50,50,0.1); color: #C03030; }
- 
+
 .calc-total {
   margin-top: 28px;
   padding-top: 28px;
@@ -707,7 +707,7 @@ p { color: var(--muted); }
 }
 .calc-disclaimer { font-size: 0.78rem; color: var(--muted); margin-top: 8px; max-width: 360px; line-height: 1.5; }
 .calc-actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
- 
+
 /* ===== DELIVERY ===== */
 .delivery { background: var(--bg); }
 .delivery-grid {
@@ -749,14 +749,14 @@ p { color: var(--muted); }
   width: 12px; height: 1.5px;
   background: var(--accent);
 }
- 
+
 /* ===== ORDER FORM ===== */
 .order { background: var(--bg-dark); color: var(--light); padding: 120px 0; }
 .order .section-tag { color: #B8C5A8; }
 .order .section-tag::before { background: #B8C5A8; }
 .order h2 { color: var(--light); }
 .order .section-title p { color: rgba(250,248,243,0.7); }
- 
+
 .form-wrap {
   max-width: 720px;
   margin: 0 auto;
@@ -768,7 +768,7 @@ p { color: var(--muted); }
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 .form-row.single { grid-template-columns: 1fr; }
-.form-group { display: flex; flex-direction: column; }
+.form-group { display: flex; flex-direction: column; min-width: 0; }
 .form-group label {
   font-size: 0.82rem;
   font-weight: 500;
@@ -780,6 +780,10 @@ p { color: var(--muted); }
 .form-group input,
 .form-group select,
 .form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   padding: 14px 16px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(250,248,243,0.15);
@@ -799,7 +803,7 @@ p { color: var(--muted); }
 .form-group select option { background: var(--bg-dark); color: var(--light); }
 .form-group textarea { resize: vertical; min-height: 100px; font-family: inherit; }
 .form-group input.error, .form-group select.error, .form-group textarea.error { border-color: #E07050; }
- 
+
 .form-check {
   display: flex;
   align-items: flex-start;
@@ -811,7 +815,7 @@ p { color: var(--muted); }
 }
 .form-check input { margin-top: 3px; flex-shrink: 0; accent-color: var(--accent); }
 .form-check a { color: #B8C5A8; text-decoration: underline; }
- 
+
 .form-submit {
   width: 100%;
   padding: 18px;
@@ -823,7 +827,19 @@ p { color: var(--muted); }
   transition: all var(--transition);
 }
 .form-submit:hover { background: #B8C5A8; transform: translateY(-2px); }
- 
+.form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.form-error-msg {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(224,112,80,0.12);
+  border: 1px solid rgba(224,112,80,0.4);
+  border-radius: var(--radius);
+  color: #F4B8A0;
+  font-size: 0.88rem;
+  display: none;
+}
+.form-error-msg.visible { display: block; animation: fadeIn 0.4s ease; }
+
 .form-wrap { position: relative; }
 .form-content {
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -866,7 +882,7 @@ p { color: var(--muted); }
 .form-success h3 { color: var(--light); margin-bottom: 12px; }
 .form-success p { color: rgba(250,248,243,0.7); }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
- 
+
 /* ===== CONTACTS ===== */
 .contacts { background: var(--bg); }
 .contacts-grid {
@@ -908,7 +924,7 @@ p { color: var(--muted); }
   background: var(--border);
 }
 .map-wrap iframe { width: 100%; height: 100%; min-height: 480px; border: 0; display: block; }
- 
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--bg-dark);
@@ -956,14 +972,14 @@ p { color: var(--muted); }
 }
 .policy-content.open { max-height: 800px; padding-top: 24px; }
 .policy-content p { margin-bottom: 12px; color: rgba(250,248,243,0.6); }
- 
+
 /* ===== REVEAL ANIMATION ===== */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s cubic-bezier(0.2,0.8,0.2,1), transform 0.9s cubic-bezier(0.2,0.8,0.2,1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
- 
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1024,7 +1040,7 @@ p { color: var(--muted); }
 </style>
 </head>
 <body>
- 
+
 <!-- ============ HEADER ============ -->
 <header class="header">
   <div class="container header-inner">
@@ -1040,9 +1056,9 @@ p { color: var(--muted); }
         <small>с 2014 года</small>
       </span>
     </a>
- 
+
     <input type="checkbox" id="menu-toggle" aria-label="Меню">
- 
+
     <nav class="nav" aria-label="Основная навигация">
       <a href="#hero">Главная</a>
       <a href="#about">О нас</a>
@@ -1051,7 +1067,7 @@ p { color: var(--muted); }
       <a href="#delivery">Доставка</a>
       <a href="#contacts">Контакты</a>
     </nav>
- 
+
     <div class="header-cta">
       <a href="tel:+79193168407" class="header-phone">+7 919 316-84-07</a>
       <a href="#order" class="btn btn-primary btn-sm">Заказать</a>
@@ -1061,9 +1077,9 @@ p { color: var(--muted); }
     </div>
   </div>
 </header>
- 
+
 <main>
- 
+
 <!-- ============ HERO ============ -->
 <section class="hero" id="hero">
   <!-- видео-фон, заменить src на реальный путь -->
@@ -1073,7 +1089,7 @@ p { color: var(--muted); }
     <!-- сюда вставить путь к видео -->
   </video>
   <div class="hero-overlay"></div>
- 
+
   <div class="container hero-content">
     <span class="hero-eyebrow reveal">Производство · Челябинская область</span>
     <h1 class="reveal reveal-delay-1">
@@ -1089,14 +1105,14 @@ p { color: var(--muted); }
       <a href="#calculator" class="btn btn-ghost">Рассчитать заказ</a>
     </div>
   </div>
- 
+
   <div class="container hero-meta">
     <div class="hero-meta-item"><strong>10+</strong>лет на рынке</div>
     <div class="hero-meta-item"><strong>20+</strong>позиций пиломатериала</div>
-    <div class="hero-meta-item"><strong>74</strong>регион — доставка</div>
+    <div class="hero-meta-item"><strong>0%</strong>посредников — производство своё</div>
   </div>
 </section>
- 
+
 <!-- ============ FEATURES ============ -->
 <section class="features">
   <div class="container">
@@ -1104,7 +1120,7 @@ p { color: var(--muted); }
       <span class="section-tag">Преимущества</span>
       <h2>Почему выбирают нас</h2>
     </div>
- 
+
     <div class="features-grid">
       <article class="feature-card reveal">
         <div class="feature-icon">
@@ -1115,7 +1131,7 @@ p { color: var(--muted); }
         <h4>Собственное производство</h4>
         <p>Полный цикл: от приёмки леса до отгрузки готового пиломатериала. Без посредников.</p>
       </article>
- 
+
       <article class="feature-card reveal reveal-delay-1">
         <div class="feature-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1125,7 +1141,7 @@ p { color: var(--muted); }
         <h4>Более 10 лет опыта</h4>
         <p>Работаем с 2014 года. Знаем характеристики каждой партии: влажность, сорт, геометрию.</p>
       </article>
- 
+
       <article class="feature-card reveal reveal-delay-2">
         <div class="feature-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1135,7 +1151,7 @@ p { color: var(--muted); }
         <h4>Доставка по области</h4>
         <p>Челябинск и Челябинская область. Без минимального заказа. Возможен самовывоз.</p>
       </article>
- 
+
       <article class="feature-card reveal reveal-delay-3">
         <div class="feature-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1148,7 +1164,7 @@ p { color: var(--muted); }
     </div>
   </div>
 </section>
- 
+
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
   <div class="container">
@@ -1160,29 +1176,21 @@ p { color: var(--muted); }
         <p>Основной материал — сосна местной заготовки. Ведём разделение по сортам, контролируем влажность и геометрию. Под заказ работаем с лиственницей: размеры и сроки уточняем индивидуально.</p>
         <p>Среди постоянных клиентов — частные застройщики, бригады отделочников, небольшие строительные компании Челябинской области. Работаем без посредников и без скрытых наценок.</p>
       </div>
- 
+
       <div class="counters reveal reveal-delay-2">
         <div class="counter">
-          <div class="counter-num" data-target="10" data-suffix="+">0</div>
+          <div class="counter-num" data-target="10" data-suffix="+">0+</div>
           <div class="counter-label">лет производственного опыта</div>
         </div>
         <div class="counter">
-          <div class="counter-num" data-target="20" data-suffix="+">0</div>
+          <div class="counter-num" id="counter-products" data-target="20" data-suffix="+">0+</div>
           <div class="counter-label">позиций в ассортименте</div>
-        </div>
-        <div class="counter">
-          <div class="counter-num" data-target="100" data-suffix="%">0</div>
-          <div class="counter-label">собственное производство</div>
-        </div>
-        <div class="counter">
-          <div class="counter-num" data-target="74" data-suffix=" регион">0</div>
-          <div class="counter-label">доставка по области</div>
         </div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- ============ CATALOG ============ -->
 <section class="section catalog" id="catalog">
   <div class="container">
@@ -1191,12 +1199,12 @@ p { color: var(--muted); }
       <h2>Пиломатериалы и дрова</h2>
       <p>Цены указаны за стандартные единицы измерения. На все позиции даём документы, отгружаем по факту.</p>
     </div>
- 
+
     <!-- Категории и товары рендерятся из JS-массива PRODUCTS -->
     <div id="catalog-root"></div>
   </div>
 </section>
- 
+
 <!-- ============ CALCULATOR ============ -->
 <section class="section calculator" id="calculator">
   <div class="container">
@@ -1205,7 +1213,7 @@ p { color: var(--muted); }
       <h2>Предварительный расчёт заказа</h2>
       <p>Добавьте позиции и укажите количество. Расчёт автоматически перейдёт в форму заявки.</p>
     </div>
- 
+
     <div class="calc-box reveal">
       <div class="calc-add">
         <select id="calc-select" aria-label="Выбор товара">
@@ -1213,11 +1221,11 @@ p { color: var(--muted); }
         </select>
         <button class="btn btn-primary" id="calc-add-btn">Добавить позицию</button>
       </div>
- 
+
       <div class="calc-items" id="calc-items">
         <div class="calc-empty">Добавьте товары для расчёта</div>
       </div>
- 
+
       <div class="calc-total">
         <div>
           <div class="calc-total-label">Итого</div>
@@ -1228,7 +1236,7 @@ p { color: var(--muted); }
           Окончательную стоимость уточнит менеджер.
         </div>
       </div>
- 
+
       <div class="calc-actions">
         <button class="btn btn-outline" id="calc-clear">Очистить</button>
         <button class="btn btn-primary" id="calc-send">Отправить заявку</button>
@@ -1236,7 +1244,7 @@ p { color: var(--muted); }
     </div>
   </div>
 </section>
- 
+
 <!-- ============ DELIVERY ============ -->
 <section class="section delivery" id="delivery">
   <div class="container">
@@ -1244,7 +1252,7 @@ p { color: var(--muted); }
       <span class="section-tag">Условия</span>
       <h2>Доставка и самовывоз</h2>
     </div>
- 
+
     <div class="delivery-grid">
       <article class="delivery-card reveal">
         <div class="delivery-icon">
@@ -1261,7 +1269,7 @@ p { color: var(--muted); }
           <li>Сроки уточняем при оформлении заявки</li>
         </ul>
       </article>
- 
+
       <article class="delivery-card reveal reveal-delay-1">
         <div class="delivery-icon">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1280,7 +1288,7 @@ p { color: var(--muted); }
     </div>
   </div>
 </section>
- 
+
 <!-- ============ ORDER FORM ============ -->
 <section class="section order" id="order">
   <div class="container">
@@ -1289,9 +1297,11 @@ p { color: var(--muted); }
       <h2>Оставьте заявку</h2>
       <p>Свяжемся в течение рабочего дня — уточним наличие, сроки и стоимость доставки.</p>
     </div>
- 
+
     <div class="form-wrap reveal">
       <form id="order-form" class="form-content" novalidate>
+        <!-- honeypot: невидимое поле для отсева ботов -->
+        <input type="text" name="website" id="f-website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
         <div class="form-row">
           <div class="form-group">
             <label for="f-name">Имя <span class="req">*</span></label>
@@ -1302,7 +1312,7 @@ p { color: var(--muted); }
             <input type="tel" id="f-phone" name="phone" required placeholder="+7 (___) ___-__-__">
           </div>
         </div>
- 
+
         <div class="form-row">
           <div class="form-group">
             <label for="f-email">Email</label>
@@ -1315,29 +1325,30 @@ p { color: var(--muted); }
             </select>
           </div>
         </div>
- 
+
         <div class="form-row single">
           <div class="form-group">
             <label for="f-qty">Количество</label>
             <input type="text" id="f-qty" name="qty" placeholder="Например: 5 м³ или 200 шт">
           </div>
         </div>
- 
+
         <div class="form-row single">
           <div class="form-group">
             <label for="f-comment">Комментарий</label>
             <textarea id="f-comment" name="comment" placeholder="Адрес доставки, сроки, особые требования..."></textarea>
           </div>
         </div>
- 
+
         <label class="form-check">
           <input type="checkbox" id="f-agree" required>
           <span>Согласен на обработку персональных данных в соответствии с <a href="#policy">политикой обработки</a></span>
         </label>
- 
-        <button type="submit" class="form-submit">Отправить заявку</button>
+
+        <button type="submit" class="form-submit" id="form-submit">Отправить заявку</button>
+        <div class="form-error-msg" id="form-error">Не удалось отправить заявку. Попробуйте ещё раз или позвоните нам напрямую.</div>
       </form>
- 
+
       <div class="form-success" id="form-success">
         <div class="form-success-icon">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1350,7 +1361,7 @@ p { color: var(--muted); }
     </div>
   </div>
 </section>
- 
+
 <!-- ============ CONTACTS ============ -->
 <section class="section contacts" id="contacts">
   <div class="container">
@@ -1358,7 +1369,7 @@ p { color: var(--muted); }
       <span class="section-tag">Связаться</span>
       <h2>Контакты и адрес</h2>
     </div>
- 
+
     <div class="contacts-grid">
       <div class="contacts-info reveal">
         <div class="contact-item">
@@ -1378,7 +1389,7 @@ p { color: var(--muted); }
           <div class="contact-value">Пн–Пт: 08:00 – 17:00<br><span style="font-weight: 400; color: var(--muted); font-size: 0.95rem;">Сб–Вс: выходной</span></div>
         </div>
       </div>
- 
+
       <div class="map-wrap reveal reveal-delay-1">
         <iframe
           src="https://yandex.ru/map-widget/v1/?ll=61.333100%2C55.361900&mode=search&sll=61.333100%2C55.361900&text=%D0%A1%D0%B0%D0%B4%D0%BE%D0%B2%D0%B0%D1%8F%2015%2F1%20%D0%94%D0%BE%D0%BB%D0%B3%D0%BE%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5&z=15"
@@ -1389,9 +1400,9 @@ p { color: var(--muted); }
     </div>
   </div>
 </section>
- 
+
 </main>
- 
+
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
@@ -1411,7 +1422,7 @@ p { color: var(--muted); }
         </div>
         <p>Производство пиломатериалов в Челябинской области. Доска, брус, дрова. Сосна и лиственница.</p>
       </div>
- 
+
       <div>
         <h5>Контакты</h5>
         <ul>
@@ -1420,7 +1431,7 @@ p { color: var(--muted); }
           <li>с. Долгодеревенское,<br>ул. Садовая, 15/1</li>
         </ul>
       </div>
- 
+
       <div>
         <h5>Навигация</h5>
         <ul>
@@ -1432,26 +1443,26 @@ p { color: var(--muted); }
         </ul>
       </div>
     </div>
- 
+
     <div id="policy">
       <a class="policy-toggle" id="policy-toggle">Политика обработки персональных данных ▾</a>
       <div class="policy-content" id="policy-content">
         <p style="color: rgba(250,248,243,0.45); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase;">Актуально на 2026 год</p>
         <p>Настоящая Политика определяет порядок обработки и защиты персональных данных пользователей сайта «Челябинские лесоматериалы».</p>
-        <p>Оператором персональных данных выступает ИП / ООО «Челябинские лесоматериалы» (с. Долгодеревенское, ул. Садовая, 15/1). Целью обработки является приём и обработка заявок на покупку пиломатериалов, обратная связь с клиентами по вопросам заказа и доставки.</p>
+        <p>Оператором персональных данных выступает ООО «Челябинские лесоматериалы» (с. Долгодеревенское, ул. Садовая, 15/1). Целью обработки является приём и обработка заявок на покупку пиломатериалов, обратная связь с клиентами по вопросам заказа и доставки.</p>
         <p>Обрабатываются следующие данные: имя, контактный телефон, адрес электронной почты, состав заказа и комментарии, оставленные пользователем при отправке заявки.</p>
         <p>Персональные данные не передаются третьим лицам, за исключением случаев, предусмотренных законодательством РФ. Данные хранятся в течение срока, необходимого для выполнения заказа, после чего удаляются или обезличиваются.</p>
         <p>Пользователь вправе в любой момент отозвать своё согласие на обработку персональных данных, направив запрос на адрес chel-forest@mail.ru.</p>
       </div>
     </div>
- 
+
     <div class="footer-bottom">
       <span>© 2014–2026 Челябинские лесоматериалы. Все права защищены.</span>
       <span>Сайт носит информационный характер и не является публичной офертой.</span>
     </div>
   </div>
 </footer>
- 
+
 <script>
 /* ===== DATA: ассортимент из прайса ===== */
 const PRODUCTS = [
@@ -1487,12 +1498,12 @@ const PRODUCTS = [
   // Лиственница (под заказ)
   { id: 'larch',        cat: 'Лиственница',                 name: 'Пиломатериалы из лиственницы', size: 'Размеры по согласованию', species: 'Лиственница', grade: 'под заказ', onRequest: true },
 ];
- 
+
 /* ===== UTILS ===== */
 const fmt = n => new Intl.NumberFormat('ru-RU').format(Math.round(n));
 const $ = sel => document.querySelector(sel);
 const $$ = sel => document.querySelectorAll(sel);
- 
+
 /* ===== CATALOG RENDERING ===== */
 function renderCatalog() {
   const root = $('#catalog-root');
@@ -1502,7 +1513,7 @@ function renderCatalog() {
     if (!groups[p.cat]) { groups[p.cat] = []; order.push(p.cat); }
     groups[p.cat].push(p);
   });
- 
+
   let html = '';
   order.forEach((cat, idx) => {
     const items = groups[cat];
@@ -1530,7 +1541,7 @@ function renderCatalog() {
   root.innerHTML = html;
   attachCatalogHandlers();
 }
- 
+
 function productSVG(p) {
   // обводка #8B6F47, заливка #C4A882
   const stroke = '#8B6F47';
@@ -1584,7 +1595,7 @@ function productSVG(p) {
     <line x1="56" y1="40" x2="56" y2="49" stroke="${stroke}" stroke-width="0.7" opacity="0.5"/>
   </svg>`;
 }
- 
+
 function productCard(p) {
   const isSpecial = p.onRequest;
   const priceBlock = p.onRequest
@@ -1596,7 +1607,7 @@ function productCard(p) {
   const btn = p.onRequest
     ? `<button class="product-btn" data-action="order-larch" data-id="${p.id}">Заказать</button>`
     : `<button class="product-btn" data-action="add-to-calc" data-id="${p.id}">Добавить в расчёт</button>`;
- 
+
   return `
     <article class="product-card ${isSpecial ? 'special' : ''}">
       <div class="product-visual">
@@ -1613,7 +1624,7 @@ function productCard(p) {
       </div>
     </article>`;
 }
- 
+
 function declCount(n, forms) {
   const m100 = n % 100, m10 = n % 10;
   if (m100 >= 11 && m100 <= 14) return forms[2];
@@ -1621,7 +1632,7 @@ function declCount(n, forms) {
   if (m10 >= 2 && m10 <= 4) return forms[1];
   return forms[2];
 }
- 
+
 function attachCatalogHandlers() {
   $$('[data-action="add-to-calc"]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1640,7 +1651,7 @@ function attachCatalogHandlers() {
     });
   });
 }
- 
+
 /* ===== POPULATE SELECTS ===== */
 function populateSelects() {
   // в калькуляторе — без лиственницы
@@ -1651,7 +1662,7 @@ function populateSelects() {
     opt.textContent = `${p.name} ${p.size} · ${p.species}${p.grade ? ' · ' + p.grade : ''}`;
     calcSel.appendChild(opt);
   });
- 
+
   // в форме заказа — все позиции + Другое
   const formSel = $('#f-product');
   PRODUCTS.forEach(p => {
@@ -1665,10 +1676,10 @@ function populateSelects() {
   other.textContent = 'Другое / уточнить у менеджера';
   formSel.appendChild(other);
 }
- 
+
 /* ===== CALCULATOR ===== */
 let calcItems = []; // [{uid, productId, unit:'m3'|'pcs', qty}]
- 
+
 function addToCalc(productId) {
   const p = PRODUCTS.find(x => x.id === productId);
   if (!p) return;
@@ -1678,7 +1689,7 @@ function addToCalc(productId) {
   calcItems.push({ uid, productId, unit, qty: 1 });
   renderCalc();
 }
- 
+
 function renderCalc() {
   const wrap = $('#calc-items');
   if (!calcItems.length) {
@@ -1686,7 +1697,7 @@ function renderCalc() {
     updateTotal();
     return;
   }
- 
+
   wrap.innerHTML = calcItems.map(item => {
     const p = PRODUCTS.find(x => x.id === item.productId);
     const sum = calcRowSum(item, p);
@@ -1716,7 +1727,7 @@ function renderCalc() {
         </button>
       </div>`;
   }).join('');
- 
+
   // обработчики
   wrap.querySelectorAll('.unit-toggle button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1747,10 +1758,10 @@ function renderCalc() {
       }, 280);
     });
   });
- 
+
   updateTotal();
 }
- 
+
 function calcRowSum(item, p) {
   if (p.isFirewood) return item.qty * p.pricePiece;
   if (item.unit === 'm3') return item.qty * p.priceM3;
@@ -1758,12 +1769,12 @@ function calcRowSum(item, p) {
   const volumePiece = (p.t * p.w * p.l) / 1e9; // мм³ -> м³
   return item.qty * volumePiece * p.priceM3;
 }
- 
+
 function updateTotal() {
   const total = calcItems.reduce((s, i) => s + calcRowSum(i, PRODUCTS.find(p => p.id === i.productId)), 0);
   $('#calc-total').textContent = fmt(total) + ' ₽';
 }
- 
+
 function buildCalcSummary() {
   if (!calcItems.length) return '';
   let total = 0;
@@ -1780,7 +1791,7 @@ function buildCalcSummary() {
   lines.push(`\nИтого: ${fmt(total)} ₽ (предварительно, без учёта доставки)`);
   return 'Состав расчёта:\n' + lines.join('\n');
 }
- 
+
 /* ===== EVENT BINDINGS ===== */
 function bindCalcControls() {
   $('#calc-add-btn').addEventListener('click', () => {
@@ -1795,7 +1806,7 @@ function bindCalcControls() {
     setTimeout(() => $('#f-name').focus(), 600);
   });
 }
- 
+
 /* ===== PHONE MASK ===== */
 function phoneMask(input) {
   input.addEventListener('input', e => {
@@ -1811,34 +1822,96 @@ function phoneMask(input) {
     e.target.value = r;
   });
 }
- 
+
+/* ===== ИНТЕГРАЦИЯ С GOOGLE SHEETS + TELEGRAM =====
+ * Сюда вставь URL твоего Apps Script веб-приложения.
+ * Получить URL: см. инструкцию в файле apps_script.gs (шаг 4).
+ * Если оставить пустым — форма будет работать как заглушка.
+ */
+const APPS_SCRIPT_URL = ''; // например: 'https://script.google.com/macros/s/AKfycb.../exec'
+
 /* ===== FORM ===== */
 function bindForm() {
   const form = $('#order-form');
+  const submitBtn = $('#form-submit');
+  const errorBox = $('#form-error');
   phoneMask($('#f-phone'));
- 
-  form.addEventListener('submit', e => {
+
+  // Получить читаемое название товара из <select>
+  function getProductLabel() {
+    const sel = $('#f-product');
+    if (!sel.value) return '';
+    return sel.options[sel.selectedIndex].text;
+  }
+
+  async function sendToBackend(payload) {
+    if (!APPS_SCRIPT_URL) {
+      // Заглушка: если URL ещё не вставлен — имитируем успех
+      console.warn('APPS_SCRIPT_URL не задан, заявка не отправлена на сервер');
+      await new Promise(r => setTimeout(r, 400));
+      return { ok: true };
+    }
+    const res = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      // text/plain — чтобы Apps Script принял без CORS-preflight
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.json();
+  }
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const name = $('#f-name'), phone = $('#f-phone'), agree = $('#f-agree');
     let ok = true;
     [name, phone].forEach(f => f.classList.remove('error'));
+    errorBox.classList.remove('visible');
+
     if (!name.value.trim()) { name.classList.add('error'); ok = false; }
     const digits = phone.value.replace(/\D/g, '');
     if (digits.length < 10) { phone.classList.add('error'); ok = false; }
     if (!agree.checked) { agree.parentElement.style.color = '#E07050'; ok = false; }
     else agree.parentElement.style.color = '';
     if (!ok) return;
- 
-    form.classList.add('fading');
-    setTimeout(() => $('#form-success').classList.add('visible'), 350);
+
+    // Собираем данные для отправки
+    const payload = {
+      name:    name.value.trim(),
+      phone:   phone.value.trim(),
+      email:   $('#f-email').value.trim(),
+      product: getProductLabel(),
+      qty:     $('#f-qty').value.trim(),
+      comment: $('#f-comment').value.trim(),
+      website: $('#f-website').value // honeypot
+    };
+
+    // Состояние «отправка»
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Отправляем...';
+
+    try {
+      const result = await sendToBackend(payload);
+      if (!result.ok) throw new Error(result.error || 'unknown');
+
+      // Успех: плавный переход к сообщению
+      form.classList.add('fading');
+      setTimeout(() => $('#form-success').classList.add('visible'), 350);
+    } catch (err) {
+      console.error('Ошибка отправки:', err);
+      errorBox.classList.add('visible');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
   });
 }
- 
+
 /* ===== POLICY TOGGLE ===== */
 $('#policy-toggle').addEventListener('click', () => {
   $('#policy-content').classList.toggle('open');
 });
- 
+
 /* ===== SMOOTH SCROLL ===== */
 function smoothScroll(target) {
   const el = document.querySelector(target);
@@ -1859,7 +1932,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
- 
+
 /* ===== REVEAL ON SCROLL ===== */
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1869,17 +1942,25 @@ const io = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
- 
+
 function bindReveal() {
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 }
- 
+
 /* ===== COUNTERS (один раз при первом появлении) ===== */
-const counterIO = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
+function initCounters() {
+  // Подставляем реальное число позиций из каталога
+  const productsCounter = document.getElementById('counter-products');
+  if (productsCounter) {
+    productsCounter.dataset.target = String(PRODUCTS.length);
+    productsCounter.textContent = '0' + (productsCounter.dataset.suffix || '');
+  }
+
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
       const el = entry.target;
-      const target = +el.dataset.target;
+      const target = parseInt(el.dataset.target, 10) || 0;
       const suffix = el.dataset.suffix || '';
       const dur = 1600;
       const start = performance.now();
@@ -1891,11 +1972,12 @@ const counterIO = new IntersectionObserver((entries) => {
       }
       requestAnimationFrame(step);
       counterIO.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.counter-num').forEach(el => counterIO.observe(el));
- 
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.counter-num').forEach(el => counterIO.observe(el));
+}
+
 /* ===== HERO VIDEO: скрыть, если нет источника ===== */
 (function() {
   const video = document.querySelector('.hero-video');
@@ -1905,7 +1987,7 @@ document.querySelectorAll('.counter-num').forEach(el => counterIO.observe(el));
     video.style.display = 'none';
   }
 })();
- 
+
 /* ===== HERO PARALLAX ===== */
 const heroVideo = document.querySelector('.hero-video');
 window.addEventListener('scroll', () => {
@@ -1914,13 +1996,14 @@ window.addEventListener('scroll', () => {
     heroVideo.style.transform = `translate3d(0, ${y * 0.3}px, 0) scale(1.05)`;
   }
 }, { passive: true });
- 
+
 /* ===== INIT ===== */
 renderCatalog();
 populateSelects();
 bindCalcControls();
 bindForm();
 bindReveal();
+initCounters();
 </script>
 </body>
-</html
+</html>

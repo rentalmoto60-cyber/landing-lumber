@@ -275,7 +275,7 @@ p { color: var(--muted); }
   z-index: 2;
   color: var(--light);
   max-width: 880px;
-  padding: 120px 0 80px;
+  padding: 120px 0 160px;
 }
 .hero-eyebrow {
   display: inline-flex;
@@ -318,19 +318,34 @@ p { color: var(--muted); }
 
 .hero-meta {
   position: absolute;
-  bottom: 40px;
+  bottom: 0;
   left: 0; right: 0;
   z-index: 2;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   gap: 32px;
   color: var(--light);
   font-size: 0.82rem;
   letter-spacing: 0.05em;
+  padding: 22px 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(8,11,9,0.55) 50%);
+  backdrop-filter: blur(2px);
 }
-.hero-meta-item { opacity: 0.7; }
-.hero-meta-item strong { display: block; font-family: 'Manrope', sans-serif; font-size: 1.6rem; font-weight: 700; opacity: 1; margin-bottom: 4px; }
+.hero-meta-item {
+  opacity: 0.85;
+  flex: 1;
+  min-width: 0;
+}
+.hero-meta-item strong {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  opacity: 1;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
 
 /* ===== FEATURES ===== */
 .features {

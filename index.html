@@ -343,11 +343,27 @@ p { color: var(--muted); }
   gap: 24px;
 }
 .feature-card {
-  padding: 36px 28px;
+  position: relative;
+  padding: 32px 28px;
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   transition: all var(--transition);
+  overflow: hidden;
+  isolation: isolate;
+}
+.feature-card-photo {
+  margin: -32px -28px 24px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.feature-card-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(255,255,255,0.6));
 }
 .feature-card:hover {
   transform: translateY(-4px);
@@ -514,7 +530,7 @@ p { color: var(--muted); }
 .product-card:hover .product-visual svg { transform: translateY(-3px) scale(1.05); }
 .product-visual-size {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
   font-size: 1.25rem;
@@ -524,13 +540,23 @@ p { color: var(--muted); }
 }
 .product-visual-cat {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(74,57,32,0.65);
 }
+.product-card.special .product-visual,
+.product-visual:has(img) {
+  background: var(--bg-dark);
+}
+.product-visual:has(img)::before {
+  background: linear-gradient(180deg, rgba(15,20,17,0.2) 0%, rgba(15,20,17,0.75) 100%);
+  z-index: 1;
+}
+.product-visual:has(img) .product-visual-size { color: var(--light); text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+.product-visual:has(img) .product-visual-cat { color: rgba(250,248,243,0.85); }
 .product-info { padding: 20px; flex: 1; display: flex; flex-direction: column; }
 .product-grade {
   display: inline-block;
@@ -1116,11 +1142,64 @@ p { color: var(--muted); }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 
+/* ===== GALLERY ===== */
+.gallery {
+  background: var(--light);
+  padding: 100px 0;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 16px;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  display: block;
+  background: var(--bg);
+  cursor: zoom-in;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(0.2,0.8,0.2,1), filter 0.5s;
+}
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(15,20,17,0.7));
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.gallery-item:hover img { transform: scale(1.06); filter: brightness(1.05); }
+.gallery-item:hover::after { opacity: 1; }
+.gallery-cap {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  color: var(--light);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s, transform 0.4s;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.gallery-item:hover .gallery-cap { opacity: 1; transform: translateY(0); }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .contacts-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
 }
 @media (max-width: 768px) {
   .section { padding: 72px 0; }
@@ -1169,6 +1248,8 @@ p { color: var(--muted); }
   .hero-buttons { flex-direction: column; align-items: stretch; }
   .hero-buttons .btn { justify-content: center; }
   .features-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+  .gallery-item:first-child { grid-column: span 1; grid-row: span 1; }
   .calc-actions { flex-direction: column; }
   .calc-actions .btn { width: 100%; }
   .form-wrap { padding: 20px; }
@@ -1198,6 +1279,7 @@ p { color: var(--muted); }
     <nav class="nav" aria-label="Основная навигация">
       <a href="#hero">Главная</a>
       <a href="#about">О нас</a>
+      <a href="#production">Производство</a>
       <a href="#catalog">Каталог</a>
       <a href="#calculator">Калькулятор</a>
       <a href="#delivery">Доставка</a>
@@ -1219,8 +1301,8 @@ p { color: var(--muted); }
 <!-- ============ HERO ============ -->
 <section class="hero" id="hero">
   <!-- видео-фон, заменить src на реальный путь -->
-  <img class="hero-fallback" src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1920&q=80" alt="" aria-hidden="true">
-  <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1920&q=80">
+  <img class="hero-fallback" src="photos/ai_logs.jpg" alt="" aria-hidden="true">
+  <video class="hero-video" autoplay muted loop playsinline poster="photos/ai_logs.jpg">
     <source src="" type="video/mp4">
     <!-- сюда вставить путь к видео -->
   </video>
@@ -1259,44 +1341,90 @@ p { color: var(--muted); }
 
     <div class="features-grid">
       <article class="feature-card reveal">
+        <div class="feature-card-photo" style="background-image: url('photos/1426.jpg');"></div>
         <div class="feature-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-9h6v9"/>
+            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="3" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="3" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="21" y2="12"/>
           </svg>
         </div>
-        <h4>Собственное производство</h4>
-        <p>Полный цикл: от приёмки леса до отгрузки готового пиломатериала. Без посредников.</p>
+        <h4>Распиловка на дисковом многопиле</h4>
+        <p>Ровная геометрия по всей длине, широкая пласть выходит почти строганой. Меньше доработки на объекте.</p>
       </article>
 
       <article class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-          </svg>
-        </div>
-        <h4>Более 10 лет опыта</h4>
-        <p>Работаем с 2014 года. Знаем характеристики каждой партии: влажность, сорт, геометрию.</p>
-      </article>
-
-      <article class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="1" y="6" width="15" height="13" rx="1"/><path d="M16 10h4l3 3v6h-7"/><circle cx="6" cy="19" r="2"/><circle cx="19" cy="19" r="2"/>
-          </svg>
-        </div>
-        <h4>Доставка по области</h4>
-        <p>Челябинск и Челябинская область. Без минимального заказа. Возможен самовывоз.</p>
-      </article>
-
-      <article class="feature-card reveal reveal-delay-3">
+        <div class="feature-card-photo" style="background-image: url('photos/ai_ural.jpg');"></div>
         <div class="feature-icon">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z"/><path d="M12 22V12"/><path d="M4 7l8 5 8-5"/>
           </svg>
         </div>
-        <h4>Сосна и лиственница</h4>
-        <p>Основной ассортимент — сосна 1-го и 2-го сорта. Лиственницу изготавливаем под заказ.</p>
+        <h4>Своя делянка и заготовка</h4>
+        <p>Валим лес сами, вывозим Уралами, привозим на пилораму. От делянки до готовой доски — один хозяин.</p>
       </article>
+
+      <article class="feature-card reveal reveal-delay-2">
+        <div class="feature-card-photo" style="background-image: url('photos/1424.jpg');"></div>
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-9h6v9"/>
+          </svg>
+        </div>
+        <h4>Сосна, лиственница и берёза</h4>
+        <p>Весь ассортимент со своей делянки. Не перекупаем у поставщиков. Лиственница — под заказ из своего кругляка.</p>
+      </article>
+
+      <article class="feature-card reveal reveal-delay-3">
+        <div class="feature-card-photo" style="background-image: url('photos/1429.jpg');"></div>
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
+          </svg>
+        </div>
+        <h4>Автоматизированный дровокол ЛДК-450</h4>
+        <p>Промышленная линия, один оператор. Поленья ровные, стандартного размера — удобно загружать в печь.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery" id="production">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="section-tag">Производство</span>
+      <h2>На нашей пилораме</h2>
+      <p>Реальные кадры с производственной базы в селе Долгодеревенское.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <a class="gallery-item reveal" href="photos/ai_ural.jpg" target="_blank" rel="noopener" style="grid-column: span 2; grid-row: span 2;">
+        <img src="photos/ai_ural.jpg" alt="Урал с лесозаготовительной техникой" loading="lazy">
+        <span class="gallery-cap">Своя заготовка леса</span>
+      </a>
+      <a class="gallery-item reveal reveal-delay-1" href="photos/1426.jpg" target="_blank" rel="noopener">
+        <img src="photos/1426.jpg" alt="Дисковый многопил крупным планом" loading="lazy">
+        <span class="gallery-cap">Дисковый многопил</span>
+      </a>
+      <a class="gallery-item reveal reveal-delay-2" href="photos/1429.jpg" target="_blank" rel="noopener">
+        <img src="photos/1429.jpg" alt="Дровокольная линия ЛДК-450" loading="lazy">
+        <span class="gallery-cap">ЛДК-450</span>
+      </a>
+      <a class="gallery-item reveal reveal-delay-1" href="photos/1423.jpg" target="_blank" rel="noopener">
+        <img src="photos/1423.jpg" alt="Двор пилорамы со штабелями" loading="lazy">
+        <span class="gallery-cap">Склад готовой продукции</span>
+      </a>
+      <a class="gallery-item reveal reveal-delay-2" href="photos/1427.jpg" target="_blank" rel="noopener">
+        <img src="photos/1427.jpg" alt="Пульт управления многопилом" loading="lazy">
+        <span class="gallery-cap">Пульт управления</span>
+      </a>
+      <a class="gallery-item reveal reveal-delay-1" href="photos/1424.jpg" target="_blank" rel="noopener">
+        <img src="photos/1424.jpg" alt="Штабеля доски" loading="lazy">
+        <span class="gallery-cap">Штабеля пиломатериала</span>
+      </a>
+      <a class="gallery-item reveal reveal-delay-2" href="photos/1425.jpg" target="_blank" rel="noopener">
+        <img src="photos/1425.jpg" alt="Многопил, общий вид" loading="lazy">
+        <span class="gallery-cap">Цех распиловки</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1738,18 +1866,8 @@ function productSVG(p) {
   const stroke = '#8B6F47';
   const fill = '#C4A882';
   if (p.isFirewood) {
-    // дрова: связка поленьев с торцами и кольцами
-    return `<svg viewBox="0 0 80 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <ellipse cx="20" cy="22" rx="13" ry="9" fill="${fill}" stroke="${stroke}" stroke-width="1.5"/>
-      <ellipse cx="20" cy="22" rx="7" ry="4.5" fill="none" stroke="${stroke}" stroke-width="1"/>
-      <ellipse cx="20" cy="22" rx="3" ry="2" fill="none" stroke="${stroke}" stroke-width="1"/>
-      <ellipse cx="55" cy="18" rx="13" ry="9" fill="${fill}" stroke="${stroke}" stroke-width="1.5"/>
-      <ellipse cx="55" cy="18" rx="7" ry="4.5" fill="none" stroke="${stroke}" stroke-width="1"/>
-      <ellipse cx="55" cy="18" rx="3" ry="2" fill="none" stroke="${stroke}" stroke-width="1"/>
-      <ellipse cx="38" cy="42" rx="13" ry="9" fill="${fill}" stroke="${stroke}" stroke-width="1.5"/>
-      <ellipse cx="38" cy="42" rx="7" ry="4.5" fill="none" stroke="${stroke}" stroke-width="1"/>
-      <ellipse cx="38" cy="42" rx="3" ry="2" fill="none" stroke="${stroke}" stroke-width="1"/>
-    </svg>`;
+    // дрова: фоновое фото ЛДК (живое доказательство производства)
+    return `<img src="photos/1429.jpg" alt="Дровокол ЛДК-450" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:0;">`;
   }
   if (p.onRequest) {
     // лиственница: спил с кольцами
